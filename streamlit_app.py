@@ -14,12 +14,39 @@ st.set_page_config(page_title="Contentgen – AI Content Generator", page_icon="
 
 st.markdown("""
 <style>
-    .stApp { background: #f7f4fc; }
-    [data-testid="stHeader"] { background: rgba(0,0,0,0); }
-    .block-container { max-width: 900px; padding-top: 2rem; }
-    h1, h2, h3 { color: #5b3697; }
-    div.stButton > button[kind="primary"] { background: #7048b8; border-color: #7048b8; }
-    .subtitle { color: #71677f; }
+    /* Premium dark charcoal + purple theme */
+    .stApp {
+        background: radial-gradient(circle at 15% 10%, rgba(112,72,184,.24), transparent 34%),
+                    radial-gradient(circle at 90% 85%, rgba(92,45,155,.20), transparent 32%),
+                    linear-gradient(135deg, #090812 0%, #12101f 52%, #19122b 100%);
+        color: #f4f0ff;
+    }
+    [data-testid="stHeader"] { background: rgba(9,8,18,.72); }
+    [data-testid="stAppViewContainer"] > .main { background: transparent; }
+    .block-container { max-width: 900px; padding-top: 2rem; padding-bottom: 3rem; }
+    h1, h2, h3, p, label, .stMarkdown, [data-testid="stCaptionContainer"] { color: #f4f0ff !important; }
+    h1 { letter-spacing: -1px; }
+    .subtitle { color: #c4b6e8 !important; font-size: 1.05rem; }
+    [data-testid="stTabs"] button { color: #d9cafa !important; }
+    [data-testid="stTabs"] button[aria-selected="true"] { color: #ffffff !important; border-bottom-color: #a78bfa !important; }
+    [data-testid="stTextInput"] input, [data-testid="stTextArea"] textarea,
+    [data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+        background: #211b32 !important; color: #ffffff !important;
+        border: 1px solid #59427d !important; border-radius: 10px !important;
+    }
+    [data-testid="stTextInput"] input::placeholder, [data-testid="stTextArea"] textarea::placeholder { color: #b8accd !important; }
+    div.stButton > button[kind="primary"], [data-testid="stFormSubmitButton"] button {
+        background: linear-gradient(90deg, #7048b8, #965be8) !important;
+        color: #ffffff !important; border: 0 !important; border-radius: 10px !important;
+        font-weight: 600; min-height: 2.7rem;
+    }
+    div.stButton > button:not([kind="primary"]), [data-testid="stDownloadButton"] button {
+        background: #2a2140 !important; color: #f4f0ff !important;
+        border: 1px solid #684c91 !important; border-radius: 10px !important;
+    }
+    [data-testid="stAlert"] { background: #211b32; color: #f4f0ff; border: 1px solid #59427d; }
+    hr { border-color: #443456 !important; }
+    [data-testid="stForm"] { background: rgba(29,23,44,.72); padding: 1.2rem; border: 1px solid #443456; border-radius: 14px; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -187,3 +214,4 @@ else:
 st.divider()
 st.markdown("**Features:** Login & Signup • Password hashing • AI content generation • Multiple content formats • Tone selection • Download generated content")
 st.caption("Contentgen – AI Content Generator")
+
